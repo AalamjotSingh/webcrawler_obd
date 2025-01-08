@@ -1,6 +1,6 @@
 # Web Crawler and Database Integration Project
 
-This project is a comprehensive web crawler and database integration system designed to scrape, process, and store links from the Open Canada website. It monitors new documents uploaded on the site, stores the data in a MongoDB database, and sends email notifications for new updates.
+This project is a comprehensive web crawler and database integration system designed to scrape, process, and store links from the Open Canada website. It monitors new documents uploaded on the site, stores the data in a MongoDB database, and sends email notifications for new updates.This project is part of my contribution to the The Investigative Journalism Foundation (IJF), showcasing my commitment to open data initiatives and transparency.https://theijf.org/open-by-default-contributors
 
 ---
 
