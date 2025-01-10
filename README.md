@@ -11,6 +11,8 @@ This project is a comprehensive web crawler and database integration system desi
 - **Change Detection**: Identifies new links by comparing current data with previously scraped links.
 - **Email Notifications**: Sends email updates when new links are detected.
 - **Data Export**: Creates a DataFrame of new links for further analysis.
+- **Frontend with Flask**: Displays the scraped links and their metadata in a browser, allowing for interactive data exploration.
+
 
 ---
 
@@ -36,6 +38,12 @@ The entry point of the project:
 - Fetches the latest links and processes them.
 - Handles exception management and ensures proper closure of database connections.
 
+### 4. `server.py` (Flask Application)
+Provides a web-based frontend for the project:
+- **Route `/`**: Serves the homepage displaying the scraped links in a table.
+- **Route `/api/links`**: Fetches all links from the MongoDB database in JSON format.
+- Enables easy visualization and interaction with the data through a browser.
+
 ---
 
 ## Prerequisites
@@ -46,9 +54,39 @@ The entry point of the project:
    - `pymongo`
    - `pandas`
    - `beautifulsoup4`
+   -  `flask`
    - `requests`
    - `smtplib` (built-in)
+     
+## Configuration
+-   MongoDB
+-   Ensure MongoDB is running locally at localhost:27017.
+-   Default database: LinksDB
+-   Default collection: links
 
-Install dependencies using:
-```bash
-pip install pymongo pandas beautifulsoup4 requests
+## Flask Settings
+-   Run the Flask server with the command:
+-   flask run
+-   Email Settings Update the email credentials in send_email() in WebCrawler.py:
+
+
+-   email = "your@gmail.com"
+-   password = "appPassword"
+-   recipient_email = "receiver@gmail.com"
+-   Scraping Settings
+-   Modify num_pages in get_latest_documents() to change the number of pages to scrape.
+
+## File Paths
+Ensure previous_links.txt exists in the root directory.
+
+
+
+
+
+## Outputs
+
+-   Email Notifications: Receive an email containing links to new documents.
+-   Database: New links are stored in MongoDB for tracking.
+-   Logs: Displays logs in the console for debugging and tracking progress.
+-   Frontend: Visualize and interact with the scraped data in a web browser.
+-   DataFrame: Outputs a DataFrame of new links for analysis.
